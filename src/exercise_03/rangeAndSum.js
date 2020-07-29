@@ -7,7 +7,23 @@ export function range(start, end) {
   // * Please implement this function and pass all the tests in range_and_array_spec.js.
   // * Please do NOT modify the signature of the function.
 
-  throw new Error('Please delete this line and implement the function');
+  let result = [];
+  if (start === null || start === undefined || end === null || end === undefined) {
+    return result;
+  }
+  if (start === end) {
+    return result;
+  }
+  if (start < end) {
+    for (let i = start; i < end; i++) {
+      result.push(i);
+    }
+  } else {
+    for (let i = start; i > end; i--) {
+      result.push(i);
+    }
+  }
+  return result;
 }
 
 export function sum(...numbers) {
@@ -18,5 +34,17 @@ export function sum(...numbers) {
   // * Please implement this function and pass all the tests in range_and_array_spec.js.
   // * Please do NOT modify the signature of the function.
 
-  throw new Error('Please delete this line and implement the function');
+  let result= 0;
+  if (numbers === null || numbers === undefined) {
+    return result;
+  }
+  if (!numbers.length) {
+    return result;
+  }
+
+  for (let i = 0; i < numbers.length; i++) {
+    result += numbers[i];
+  }
+
+  return result;
 }
