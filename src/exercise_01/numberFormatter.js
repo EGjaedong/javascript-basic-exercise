@@ -7,6 +7,22 @@ export default function formatNumber(number, option) {
   //
   // * Please implement the function and pass all the tests in format_number_spec.js.
   // * Please do NOT modify the signature of the function.
+  let result = '';
 
-  throw new Error('Please delete this line and implement the function');
+  if (option !== undefined) {
+    if (option.currency) {
+      result += '$ ';
+    }
+  }
+
+
+  if (number > 0) {
+    let tempNumber = (parseInt((number * 100 + 0.5)) / 100).toString();
+    if (tempNumber.length === 1) {
+      tempNumber += '.00';
+    }
+    result += tempNumber;
+  }
+
+  return result;
 }
